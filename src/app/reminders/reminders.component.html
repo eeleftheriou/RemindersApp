@@ -1,0 +1,10 @@
+<h2>My Reminders</h2>
+<ul class="reminders">
+  <li *ngFor="let Reminder of reminders"
+    [class.selected]="reminder === selectedReminder"
+    (click)="onSelect(reminder)">
+    <span class="badge">{{Reminder.id}}</span> {{Reminder.name}}
+  </li>
+</ul>
+
+<app-reminder-detail [reminders]="selectedReminder"></app-reminder-detail>
